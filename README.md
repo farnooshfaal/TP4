@@ -27,6 +27,8 @@ Dans la couche bâtiment, vous pouvez voir une vue 3D d'une petite partie des b�
 Pour ce projet, j'ai essayé d'inclure la couche Web Map Service (WMS) dans mon travail, mais malheureusement je n'y suis pas parvenu.
 C'est pourquoi j'ai décidé d'écrire son code et de le mettre dans le projet pour comprendre les problèmes de mon travail.
 Le code que j'ai décidé d'utiliser pour cela est le suivant:
+
+
 // source ajoutée de la couche wms
 map.addSource("wms-test", {
    tapez : "trame",
