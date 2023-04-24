@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Montreal Crime Dashboard</title>
+    <meta
+      name="viewport"
+      content="initial-scale=1,maximum-scale=1,user-scalable=no"
+    />
+    <!-- Included Maplibre js script -->
+    <script src="https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.js"></script>
+    <!-- Included MapLibre CSS style  -->
+    <link
+      href="https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.css"
+      rel="stylesheet"
+    />
+    <!-- jquery js file link -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Include the Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0"></script>
+    <!-- Included CSS file -->
+    <link rel="stylesheet" href="map.css" />
+  </head>
+
+  <body>
+    <!-- Navbar html -->
+    <div id="navbar">
+      <div class="menu-button">Menu</div>
+      <h1 class="navbar-heading">Crime in Montreal</h1>
+    </div>
+    <div id="main">
+      <!-- HTML code for the Menu and its list items-->
+      <div id="layerlist" style="background-color: #1e253d">
+        <div style="background-color: #1e253d; color: white; padding: 10px">
+          <h2 style="color: white; color: whitesmoke; margin-left: 5px">
+            Menu
+          </h2>
+          <ul style="list-style-type: none; padding: 0">
+            <div style="padding: 3px; margin: 3px">Crime Layer</div>
+            <!-- First List Item or layer  -->
+            <li style="margin-bottom: 10px; border: 1px solid rgb(87, 86, 86)">
+              <label>
+                <input
+                  type="checkbox"
+                  name="item1"
+                  onchange="handleCheckboxChange(event)"
+                  style="margin-right: 5px"
+                />
+                <span style="color: white">Robberies Layer</span>
+              </label>
+            </li>
+            <div style="padding: 3px; margin: 3px">Yealy Crime Layer</div>
+            <!-- Second List Item or layer  -->
+            <li style="margin-bottom: 10px; border: 1px solid rgb(87, 86, 86)">
+              <label>
+                <input
+                  type="checkbox"
+                  name="item2"
+                  onchange="handleCheckboxChange(event)"
+                  style="margin-right: 5px"
+                />
+                <span style="color: white">Crime in 2019</span>
+              </label>
+            </li>
+
+            <!-- Third List Item or layer  -->
+            <li style="margin-bottom: 10px; border: 1px solid rgb(87, 86, 86)">
+              <label>
+                <input
+                  type="checkbox"
+                  name="item3"
+                  onchange="handleCheckboxChange(event)"
+                  style="margin-right: 5px"
+                />
+                <span style="color: white">Crime in 2020</span>
+              </label>
+            </li>
+            <div style="padding: 3px; margin: 3px">Income Layer</div>
+            <!-- Fourth List Item or layer  -->
+            <li style="margin-bottom: 10px; border: 1px solid rgb(87, 86, 86)">
+              <label>
+                <input
+                  type="checkbox"
+                  name="item5"
+                  onchange="handleCheckboxChange(event)"
+                  style="margin-right: 5px"
+                />
+                <span style="color: white">Average Income</span>
+              </label>
+            </li>
+            <!-- Fifth List Item or layer  -->
+            <div style="padding: 3px; margin: 3px">Buildings</div>
+            <li style="margin-bottom: 10px; border: 1px solid rgb(87, 86, 86)">
+              <label>
+                <input
+                  type="checkbox"
+                  name="item4"
+                  onchange="handleCheckboxChange(event)"
+                  style="margin-right: 5px"
+                />
+                <span style="color: white">Buildings Layer</span>
+              </label>
+            </li>
+            <div style="padding: 3px; margin: 3px">Data Animation</div>
+            <!-- Sixth List Item or layer  -->
+            <li style="margin-bottom: 10px; border: 1px solid rgb(87, 86, 86)">
+              <label>
+                <input
+                  type="checkbox"
+                  name="item6"
+                  onchange="handleCheckboxChange(event)"
+                  style="margin-right: 5px"
+                />
+                <span style="color: white">Data Animation</span>
+              </label>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- Map Div  -->
+      <div id="map"></div>
+      <!-- Lagend of map  -->
+      <div id="state-legend" class="legend">
+        <h4 id="headd">Legend</h4>
+        <div><span style="background-color: #fff5eb"></span>0</div>
+        <div><span style="background-color: #fee6ce"></span>1-2</div>
+        <div><span style="background-color: #fdd0a2"></span>2-4</div>
+        <div><span style="background-color: #fdae6b"></span>4-6</div>
+        <div><span style="background-color: #fd8d3c"></span>6-8</div>
+        <div><span style="background-color: #f16913"></span>8-10</div>
+        <div><span style="background-color: #d94801"></span>10-12</div>
+        <div><span style="background-color: #8c2d04"></span>more the 12</div>
+      </div>
+      <!-- Chart Dives for 2019  -->
+      <div id="chartMain">
+        <canvas id="my-chart"></canvas>
+        <div id="chartDiv">Crime: 2000</div>
+      </div>
+      <!-- Chart Dives for 2020  -->
+      <div id="chartMain20">
+        <canvas id="my-chart20"></canvas>
+        <div id="chartDiv20">Crime: 2000</div>
+      </div>
+      <!-- Interactive caption div on map   -->
+      <div id="map-overlay" id="features">
+        <div style="display: flex; justify-content: space-between">
+          <h2>Know More!!</h2>
+          <span id="close-btn">&times;</span>
+        </div>
+
+        <div id="pd">
+          <p><b></b></p>
+        </div>
+      </div>
+    </div>
+    <!-- Link of javascript file  -->
+    <script src="./map.js" rel="JavaScript"></script>
+  </body>
+</html>

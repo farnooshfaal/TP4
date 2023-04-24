@@ -1,0 +1,144 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#map {
+  position: absolute;
+  top: 9%;
+  bottom: 0;
+  right: 0;
+  width: 80%;
+}
+#layerlist {
+  width: 20%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+}
+.legend {
+  display: none;
+  background-color: #1e253d;
+  border-radius: 3px;
+  bottom: 30px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  color: #fff;
+  font: 12px/20px "Helvetica Neue", Arial, Helvetica, sans-serif;
+  padding: 10px;
+  position: absolute;
+  right: 10px;
+  z-index: 1;
+}
+
+.legend h4 {
+  margin: 0 0 10px;
+}
+
+.legend div span {
+  border-radius: 50%;
+  display: inline-block;
+  height: 10px;
+  margin-right: 5px;
+  width: 10px;
+}
+#navbar {
+  background-color: #1e253d;
+  height: 9%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+.navbar-heading {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 0 auto;
+  color: whitesmoke;
+}
+
+@media screen and (min-width: 768px) {
+  .navbar-heading {
+    font-size: 2rem;
+  }
+}
+#my-chart {
+  position: absolute;
+  z-index: 9999;
+
+  right: 0;
+  width: 200px; /* Set the width of the chart container */
+  height: 200px; /* Set the height of the chart container */
+  margin: 10px; /* Add some margin to the chart container */
+}
+#chartMain {
+  display: none;
+  background-color: #1e253d;
+  z-index: 9998;
+  position: absolute;
+  right: 10px;
+  top: 10%;
+  width: 220px; /* Set the width of the chart container */
+  height: 200px; /* Set the height of the chart container */
+
+  align-items: center;
+  justify-content: center;
+}
+#chartDiv {
+  position: absolute;
+  top: 45%;
+  right: 29%;
+  z-index: 999999;
+  color: whitesmoke;
+}
+/* chart20 */
+#my-chart20 {
+  position: absolute;
+  z-index: 9999;
+  right: 0;
+  width: 200px; /* Set the width of the chart container */
+  height: 200px; /* Set the height of the chart container */
+  margin: 10px; /* Add some margin to the chart container */
+}
+#chartMain20 {
+  display: none;
+  background-color: #1e253d;
+  z-index: 9998;
+  position: absolute;
+  right: 10px;
+  top: 10%;
+  width: 220px; /* Set the width of the chart container */
+  height: 200px; /* Set the height of the chart container */
+
+  align-items: center;
+  justify-content: center;
+}
+#chartDiv20 {
+  position: absolute;
+  top: 45%;
+  right: 29%;
+  z-index: 999999;
+  color: whitesmoke;
+}
+#map-overlay {
+  position: absolute;
+  display: none;
+  top: 11%;
+  right: 48%;
+  width: 24%;
+  height: 25%;
+  background: #1e253d;
+  color: whitesmoke;
+  margin-right: 20px;
+  font-family: Arial, sans-serif;
+  overflow: auto;
+  border-radius: 3px;
+  padding: 10px;
+}
+#map-overlay #close-btn:hover {
+  color: #f00;
+  cursor: pointer;
+}
